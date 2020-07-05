@@ -1,8 +1,7 @@
 const Url = require('../models/url');
-const dns = require('dns');
 const { nanoid } = require('nanoid');
 
-const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+const baseUrl = process.env.BASE_URL || 'https://url-shortner-v1.herokuapp.com';
 
 const createShortUrl = async (req, res, next) => {
     const { originalUrl } = req.body;
