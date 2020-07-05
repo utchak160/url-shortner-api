@@ -2,9 +2,37 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-content: center;
+    align-items: center;
 }
 
+.card {
+    width: 30%;
+    padding: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #010101;
+    padding: 5px 0;
+}
+.btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 16px;
+}
+button{
+    margin: 1em 0;
+}
+button:focus {
+    outline: none;
+}
 .heading {
     margin: 1em 0;
 }
