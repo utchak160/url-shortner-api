@@ -9,6 +9,7 @@ urlForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const originalUrl = URLInput.value;
     loading.textContent = 'Creating...'
+    shortUrl.textContent = '';
     fetch('/shortUrl', {
         method: 'POST',
         headers: {
