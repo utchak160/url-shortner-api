@@ -1,10 +1,16 @@
 const Url = require('../models/url');
+const {isUri} = require('valid-url');
 const { nanoid } = require('nanoid');
 
 const baseUrl = process.env.BASE_URL || 'https://url-shortner-v1.herokuapp.com';
 
 const createShortUrl = async (req, res, next) => {
     const { originalUrl } = req.body;
+    if (!isUri(originalUrl)) {
+        return res.status(422).send({
+            error: 'This is not a valid URL'
+        });
+    }
     const shortId = nanoid(4);
     const urlExist = await Url.findOne({originalUrl});
     if (urlExist) {
